@@ -8,7 +8,8 @@ public class Runner {
         Query testQuery = new Query();
 //        testQuery.countryInfo(parser,"Madagascar");
 //        testQuery.listExportersTwoProducts(parser, "gold", "diamonds");
-        testQuery.numberOfExporters(parser,"gold");
+//        testQuery.numberOfExporters(parser,"gold");
+        testQuery.bigExporters(parser,"$999,999,999");
     }
 
 

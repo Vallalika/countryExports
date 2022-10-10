@@ -18,7 +18,7 @@ public class Query {
         return "NOT FOUND";
     }
 
-    public Void listExportersTwoProducts(CSVParser parser, String exportItem1, String exportItem2) {
+    public void listExportersTwoProducts(CSVParser parser, String exportItem1, String exportItem2) {
         for (CSVRecord record: parser) {
             String exports = record.get("Exports");
             if (exports.contains(exportItem1) && exports.contains(exportItem2)) {
@@ -26,7 +26,6 @@ public class Query {
                 System.out.println(country);
             }
         }
-        return null;
     }
 
     public int numberOfExporters(CSVParser parser, String exportItem) {
@@ -39,6 +38,16 @@ public class Query {
         }
         System.out.println(exporterNumber);
         return exporterNumber;
+    }
+
+    public void bigExporters(CSVParser parser, String amount) {   // amount is a String in the format of a dollar sign, followed by an integer number with a comma separator every three digits from the right
+        for (CSVRecord record: parser) {
+            String value = record.get("Value (dollars)");
+            if (value.length() > amount.length()) {
+                String country = record.get("Country");
+                System.out.println(country);
+            }
+        }
     }
 
 }
