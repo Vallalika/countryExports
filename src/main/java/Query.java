@@ -45,7 +45,7 @@ public class Query {
             String value = record.get("Value (dollars)");
             if (value.length() > amount.length()) {
                 String country = record.get("Country");
-                System.out.println(country);
+                System.out.println(country + " " + value);
             }
         }
     }
